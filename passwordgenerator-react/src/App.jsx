@@ -9,7 +9,7 @@ function App() {
   return (
     <>
      <h1 className='text-3xl font-bold underline'>
-      Hello Prakash Timilsina.
+      Hello Prakash Timilsina. Creating the project - password generator!!
      </h1>
     </>
   )
