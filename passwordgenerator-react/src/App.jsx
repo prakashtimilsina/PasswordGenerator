@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
@@ -15,11 +15,12 @@ function App() {
 
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * strg.length + 1);
-      pass += strg.charAt(char);
+      passwd += strg.charAt(char);
     }
-    setPassword(pass);
+    setPassword(passwd);
   }, [length, charAllowed, numberAllowed, setPassword]);
 
+  useEffect(()=>{passwordGenerator()},[length, numberAllowed, charAllowed, passwordGenerator])
   return (
     <>
       <div
@@ -46,7 +47,7 @@ function App() {
             <input
               type="range"
               min={6}
-              max={120}
+              max={30}
               value={length}
               className="cursor-pointer"
               onChange={(e) => {
