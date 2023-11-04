@@ -13,12 +13,12 @@ export const todoSlice = createSlice({
         addTodo:(state, action)=>{
             const todo = {
                 id: nanoid(),
-                text: action.payload.text
+                text: action.payload
             }
             state.todos.push(todo)
         },
         removeTodo: (state, action)=>{
-            state.todos = state.todos.filter(todo=>todo.id !== action.payload.id)
+            state.todos = state.todos.filter(todo=>todo.id !== action.payload)
         },
         updateTodo:(state,action)=>{}
     }
